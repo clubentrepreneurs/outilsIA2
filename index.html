@@ -3,118 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Toolkit - Dashboard Étudiant</title>
+    <title>IA Toolkit Académique 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #1e293b; }
         
-        .sidebar-link.active {
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #f8fafc; 
+            color: #1e293b; 
+        }
+
+        .sidebar-active {
             background-color: #f0f9ff;
             color: #00AFD7;
             border-right: 4px solid #00AFD7;
         }
-        
-        .img-placeholder {
-            background: linear-gradient(135deg, #e2e8f0 0%, #00AFD7 100%);
-            height: 120px;
-            border-radius: 12px 12px 0 0;
-        }
 
-        .glass-card {
-            transition: all 0.3s ease;
+        .card-shadow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
         }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 175, 215, 0.1);
+        .card-shadow:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(0, 175, 215, 0.15);
             border-color: #00AFD7;
+        }
+
+        .img-header {
+            height: 140px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .badge-free { background: #dcfce7; color: #166534; }
+        .badge-mix { background: #fef9c3; color: #854d0e; }
+        .badge-paid { background: #fee2e2; color: #991b1b; }
+
+        /* Animation d'apparition */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col md:flex-row">
 
-    <aside class="w-full md:w-64 bg-white border-r border-slate-200 p-6 space-y-8">
+    <aside class="w-full md:w-72 bg-white border-r border-slate-200 p-8 space-y-10 z-10">
         <div>
-            <h1 class="text-xl font-800 tracking-tighter" style="color: #00AFD7;">IA TOOLKIT <span class="text-slate-400 font-light">2026</span></h1>
+            <h1 class="text-2xl font-800 tracking-tighter" style="color: #00AFD7;">IA TOOLKIT <span class="text-slate-300 font-light">2026</span></h1>
+            <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-bold">Réussite Universitaire</p>
         </div>
         
-        <nav class="space-y-2">
-            <a href="#" class="sidebar-link active flex items-center p-3 rounded-lg text-sm font-semibold transition-all">
-                <i data-lucide="layout-dashboard" class="w-4 h-4 mr-3"></i> Vue d'ensemble
+        <nav class="space-y-1">
+            <p class="text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-widest">Catégories</p>
+            <a href="#redaction" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
+                <i data-lucide="pen-tool" class="w-4 h-4 mr-3"></i> Texte & Rédaction
             </a>
-            <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-sm font-semibold text-slate-500 hover:bg-slate-50 transition-all">
-                <i data-lucide="pen-tool" class="w-4 h-4 mr-3"></i> Rédaction
+            <a href="#recherche" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
+                <i data-lucide="search" class="w-4 h-4 mr-3"></i> Recherche & Sources
             </a>
-            <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-sm font-semibold text-slate-500 hover:bg-slate-50 transition-all">
-                <i data-lucide="search" class="w-4 h-4 mr-3"></i> Recherche
+            <a href="#design" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
+                <i data-lucide="layout" class="w-4 h-4 mr-3"></i> Design & Diaporamas
+            </a>
+            <a href="#audio" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
+                <i data-lucide="mic" class="w-4 h-4 mr-3"></i> Audio & Langues
             </a>
         </nav>
+
+        <div class="pt-10 border-t border-slate-50">
+            <div class="bg-slate-50 p-4 rounded-2xl">
+                <p class="text-xs text-slate-500 leading-relaxed italic">"L'IA ne remplace pas l'étudiant, elle décuple ses capacités."</p>
+            </div>
+        </div>
     </aside>
 
-    <main class="flex-1 p-6 md:p-12 overflow-y-auto">
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900">Bibliothèque d'outils</h2>
-                <p class="text-slate-500">Sélection optimisée pour la réussite universitaire.</p>
+    <main class="flex-1 p-6 md:p-12 overflow-y-auto bg-slate-50/50">
+        
+        <header class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="fade-in">
+                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Tableau de bord</h2>
+                <p class="text-slate-500 mt-2">Explorez les outils les plus performants pour vos travaux académiques.</p>
             </div>
-            <div class="flex gap-2">
-                <span class="px-4 py-2 bg-[#00AFD7] text-white rounded-full text-xs font-bold shadow-lg shadow-cyan-200">UBS Edition</span>
+            <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3 pr-6">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold" style="background-color: #00AFD7;">UBS</div>
+                <div>
+                    <p class="text-xs font-bold text-slate-800 uppercase">Étudiant</p>
+                    <p class="text-[10px] text-slate-400">Session 2026</p>
+                </div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
-                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400" alt="IA" class="w-full h-full object-cover">
+        <section id="redaction" class="mb-20 fade-in">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background-color: #00AFD720; color: #00AFD7;">
+                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-500">Gratuit</span>
-                        <i data-lucide="pen-tool" class="w-4 h-4 text-slate-300"></i>
+                <h3 class="text-2xl font-bold text-slate-800">Texte & Rédaction</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1675557009875-436f2970a6a7?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="p-6">
+                        <span class="badge-free text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter">Gratuit</span>
+                        <h4 class="font-bold text-xl mt-3">LeChat (Mistral)</h4>
+                        <p class="text-slate-500 text-sm mt-2 mb-6">L'IA européenne performante pour synthétiser vos notes.</p>
+                        <a href="https://chat.mistral.ai/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">LeChat (Mistral)</h3>
-                    <p class="text-xs text-slate-400 mb-6">Rédaction & Synthèse ultra-rapide.</p>
-                    <a href="https://chat.mistral.ai/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
+                </div>
+                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden border-2 border-[#00AFD730]">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="p-6">
+                        <span class="badge-free text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter" style="background-color: #00AFD7; color: white;">Best for Students</span>
+                        <h4 class="font-bold text-xl mt-3">NotebookLM</h4>
+                        <p class="text-slate-500 text-sm mt-2 mb-6">Téléversez vos PDF et générez des résumés interactifs.</p>
+                        <a href="https://notebooklm.google/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
+                    </div>
+                </div>
+                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1673187670359-9946896503c8?auto=format&fit=crop&q=80&w=400');"></div>
+                    <div class="p-6">
+                        <span class="badge-mix text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter">Mixte</span>
+                        <h4 class="font-bold text-xl mt-3">ChatGPT-4o</h4>
+                        <p class="text-slate-500 text-sm mt-2 mb-6">Le couteau suisse pour structurer vos plans de mémoires.</p>
+                        <a href="https://chatgpt.com/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
-                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
-                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=400" alt="Research" class="w-full h-full object-cover">
+        <section id="recherche" class="mb-20 fade-in">
+            <div class="flex items-center mb-8">
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background-color: #00AFD720; color: #00AFD7;">
+                    <i data-lucide="search" class="w-5 h-5"></i>
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AFD7]">Incontournable</span>
-                        <i data-lucide="book-open" class="w-4 h-4 text-slate-300"></i>
+                <h3 class="text-2xl font-bold text-slate-800">Recherche & Sources</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-shadow bg-white p-6 rounded-3xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="globe" class="w-5 h-5 text-slate-400"></i></div>
+                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
                     </div>
-                    <h3 class="font-bold text-lg mb-1">NotebookLM</h3>
-                    <p class="text-xs text-slate-400 mb-6">Analysez vos propres cours et PDF.</p>
-                    <a href="https://notebooklm.google/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
+                    <h4 class="font-bold mb-1">Perplexity</h4>
+                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Le moteur de recherche qui cite ses sources.</p>
+                    <a href="https://www.perplexity.ai/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-3xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="microscope" class="w-5 h-5 text-slate-400"></i></div>
+                        <span class="badge-mix text-[8px] font-bold px-2 py-0.5 rounded uppercase">Mixte</span>
+                    </div>
+                    <h4 class="font-bold mb-1">Consensus</h4>
+                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Trouvez des preuves scientifiques réelles.</p>
+                    <a href="https://consensus.app/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-3xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="library" class="w-5 h-5 text-slate-400"></i></div>
+                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
+                    </div>
+                    <h4 class="font-bold mb-1">Zotero</h4>
+                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Gestion bibliographique et IA.</p>
+                    <a href="https://www.zotero.org/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                </div>
+                <div class="card-shadow bg-white p-6 rounded-3xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="languages" class="w-5 h-5 text-slate-400"></i></div>
+                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
+                    </div>
+                    <h4 class="font-bold mb-1">DeepL</h4>
+                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">La référence pour traduire vos articles.</p>
+                    <a href="https://www.deepl.com/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
-                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400" alt="Cyber" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-amber-500">Mixte</span>
-                        <i data-lucide="zap" class="w-4 h-4 text-slate-300"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-1">ChatGPT-4o</h3>
-                    <p class="text-xs text-slate-400 mb-6">L'assistant polyvalent par excellence.</p>
-                    <a href="https://chatgpt.com/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
-                </div>
-            </div>
-
-        </div>
+        <footer class="mt-12 text-center text-slate-300 text-[10px] uppercase tracking-[0.2em] font-bold">
+            UBS Digital Learning • 2026 • IA Intelligence Collective
+        </footer>
     </main>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        // Initialisation des icônes
+        lucide.createIcons();
+        
+        // Petit script de défilement fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
