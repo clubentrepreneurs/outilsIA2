@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Toolkit Académique 2026 - UBS</title>
+    <title>IA Toolkit Académique 2026 - UBS Final</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -65,16 +65,16 @@
 
         .nav-link:hover { background: #ffffff; color: #00AFD7; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-        .card-shadow {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid #f1f5f9;
+        /* Style uniforme des cartes sans ombre par défaut */
+        .ui-card {
+            border: 1px solid #e2e8f0;
             background: #ffffff;
+            transition: all 0.3s ease;
         }
 
-        .card-shadow:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -15px rgba(0, 175, 215, 0.15);
+        .ui-card:hover {
             border-color: #00AFD7;
+            background: #fcfdfe;
         }
 
         .badge {
@@ -127,10 +127,9 @@
                 <h3 class="text-2xl lg:text-3xl font-bold text-slate-800">Texte & Rédaction</h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                <div class="card-shadow rounded-[2rem] overflow-hidden border-2 border-[#00AFD7]/30">
+                <div class="ui-card rounded-[2rem] overflow-hidden">
                     <div class="h-32 flex items-center justify-center bg-white">
                         <svg viewBox="0 0 24 24" class="w-16 h-16" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24Z" fill="#fff"/>
                             <path d="M19.3 12.5c-.1 0-.1 0 0 0-3.3 0-6.1-2.2-7-5.2-.8 3-3.6 5.2-7 5.2 0 0-.1 0 0 0 3.3 0 6.1 2.2 7 5.2.8-3 3.6-5.2 7-5.2Z" fill="url(#gemini-grad)"/>
                             <defs>
                                 <linearGradient id="gemini-grad" x1="5.25" y1="5.25" x2="18.75" y2="18.75" gradientUnits="userSpaceOnUse">
@@ -146,7 +145,7 @@
                         <a href="https://gemini.google.com/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Lancer Gemini</a>
                     </div>
                 </div>
-                <div class="card-shadow rounded-[2rem] overflow-hidden">
+                <div class="ui-card rounded-[2rem] overflow-hidden">
                     <div class="h-32 flex items-center justify-center bg-slate-50">
                         <img src="https://www.gstatic.com/images/branding/product/2x/notebooklm_96dp.png" class="w-12 h-12" alt="NotebookLM">
                     </div>
@@ -157,7 +156,7 @@
                         <a href="https://notebooklm.google/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir l'outil</a>
                     </div>
                 </div>
-                <div class="card-shadow rounded-[2rem] overflow-hidden">
+                <div class="ui-card rounded-[2rem] overflow-hidden">
                     <div class="h-32 flex items-center justify-center bg-black text-white text-3xl font-black italic">M.</div>
                     <div class="p-8 text-center">
                         <span class="badge badge-free inline-block mb-4">Français</span>
@@ -166,7 +165,7 @@
                         <a href="https://chat.mistral.ai/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir l'outil</a>
                     </div>
                 </div>
-                <div class="card-shadow rounded-[2rem] overflow-hidden">
+                <div class="ui-card rounded-[2rem] overflow-hidden">
                     <div class="h-32 flex items-center justify-center bg-slate-50">
                         <i data-lucide="sparkles" class="w-12 h-12 text-emerald-500"></i>
                     </div>
@@ -185,25 +184,25 @@
                 <h3 class="text-2xl lg:text-3xl font-bold text-slate-800">Recherche & Sources</h3>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="https://www.perplexity.ai/" target="_blank" class="card-shadow p-8 rounded-3xl group">
+                <a href="https://www.perplexity.ai/" target="_blank" class="ui-card p-8 rounded-3xl block">
                     <span class="badge badge-mix">Mixte</span>
-                    <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Perplexity</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Recherche web citée</p>
+                    <h4 class="font-bold text-2xl mt-4 italic">Perplexity</h4>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Recherche web citée</p>
                 </a>
-                <a href="https://consensus.app/" target="_blank" class="card-shadow p-8 rounded-3xl group">
+                <a href="https://consensus.app/" target="_blank" class="ui-card p-8 rounded-3xl block">
                     <span class="badge badge-mix">Mixte</span>
-                    <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Consensus</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Moteur scientifique</p>
+                    <h4 class="font-bold text-2xl mt-4 italic">Consensus</h4>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Moteur scientifique</p>
                 </a>
-                <a href="https://www.zotero.org/" target="_blank" class="card-shadow p-8 rounded-3xl group">
+                <a href="https://www.zotero.org/" target="_blank" class="ui-card p-8 rounded-3xl block">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Zotero</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Biblio & Citations</p>
+                    <h4 class="font-bold text-2xl mt-4 italic">Zotero</h4>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Biblio & Citations</p>
                 </a>
-                <a href="https://www.deepl.com/" target="_blank" class="card-shadow p-8 rounded-3xl group">
+                <a href="https://www.deepl.com/" target="_blank" class="ui-card p-8 rounded-3xl block">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">DeepL</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Traducteur précis</p>
+                    <h4 class="font-bold text-2xl mt-4 italic">DeepL</h4>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Traducteur précis</p>
                 </a>
             </div>
         </section>
@@ -213,13 +212,13 @@
                 <h3 class="text-2xl lg:text-3xl font-bold text-slate-800">Design & Présentation</h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card-shadow p-10 rounded-[2.5rem] border-b-8 border-[#00AFD7]">
+                <div class="ui-card p-10 rounded-[2.5rem]">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="text-2xl font-bold mt-4 italic">Gamma App</h4>
                     <p class="text-slate-500 text-sm mt-2 mb-6 italic leading-relaxed">Créez des présentations complètes à partir d'un simple texte.</p>
                     <a href="https://gamma.app/" target="_blank" class="text-xs font-black custom-blue-text underline uppercase tracking-widest">Lancer Gamma</a>
                 </div>
-                <div class="card-shadow p-10 rounded-[2.5rem] border-b-8 border-[#00AFD7]">
+                <div class="ui-card p-10 rounded-[2.5rem]">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="text-2xl font-bold mt-4 italic">Canva Magic</h4>
                     <p class="text-slate-500 text-sm mt-2 mb-6 italic leading-relaxed">Design facilité pour vos rapports et supports visuels.</p>
@@ -233,19 +232,19 @@
                 <h3 class="text-2xl lg:text-3xl font-bold text-slate-800">Audio & Langues</h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center italic">
-                <a href="https://huggingface.co/spaces/openai/whisper" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
+                <a href="https://huggingface.co/spaces/openai/whisper" target="_blank" class="ui-card p-8 rounded-[2rem] block">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">Whisper</h4>
+                    <h4 class="font-bold mt-4">Whisper</h4>
                     <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Audio vers Texte (Cours)</p>
                 </a>
-                <a href="https://www.deepl.com/write" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
+                <a href="https://www.deepl.com/write" target="_blank" class="ui-card p-8 rounded-[2rem] block">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">DeepL Write</h4>
+                    <h4 class="font-bold mt-4">DeepL Write</h4>
                     <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Correction & Style</p>
                 </a>
-                <a href="https://elevenlabs.io/" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
+                <a href="https://elevenlabs.io/" target="_blank" class="ui-card p-8 rounded-[2rem] block">
                     <span class="badge badge-mix">Mixte</span>
-                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">ElevenLabs</h4>
+                    <h4 class="font-bold mt-4">ElevenLabs</h4>
                     <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Synthèse Vocale Pro</p>
                 </a>
             </div>
