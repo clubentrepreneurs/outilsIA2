@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Toolkit - Dashboard Étudiant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #1e293b; }
+        
+        .sidebar-link.active {
+            background-color: #f0f9ff;
+            color: #00AFD7;
+            border-right: 4px solid #00AFD7;
+        }
+        
+        .img-placeholder {
+            background: linear-gradient(135deg, #e2e8f0 0%, #00AFD7 100%);
+            height: 120px;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .glass-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 175, 215, 0.1);
+            border-color: #00AFD7;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col md:flex-row">
+
+    <aside class="w-full md:w-64 bg-white border-r border-slate-200 p-6 space-y-8">
+        <div>
+            <h1 class="text-xl font-800 tracking-tighter" style="color: #00AFD7;">IA TOOLKIT <span class="text-slate-400 font-light">2026</span></h1>
+        </div>
+        
+        <nav class="space-y-2">
+            <a href="#" class="sidebar-link active flex items-center p-3 rounded-lg text-sm font-semibold transition-all">
+                <i data-lucide="layout-dashboard" class="w-4 h-4 mr-3"></i> Vue d'ensemble
+            </a>
+            <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-sm font-semibold text-slate-500 hover:bg-slate-50 transition-all">
+                <i data-lucide="pen-tool" class="w-4 h-4 mr-3"></i> Rédaction
+            </a>
+            <a href="#" class="sidebar-link flex items-center p-3 rounded-lg text-sm font-semibold text-slate-500 hover:bg-slate-50 transition-all">
+                <i data-lucide="search" class="w-4 h-4 mr-3"></i> Recherche
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 p-6 md:p-12 overflow-y-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+            <div>
+                <h2 class="text-3xl font-extrabold text-slate-900">Bibliothèque d'outils</h2>
+                <p class="text-slate-500">Sélection optimisée pour la réussite universitaire.</p>
+            </div>
+            <div class="flex gap-2">
+                <span class="px-4 py-2 bg-[#00AFD7] text-white rounded-full text-xs font-bold shadow-lg shadow-cyan-200">UBS Edition</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
+                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400" alt="IA" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-500">Gratuit</span>
+                        <i data-lucide="pen-tool" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">LeChat (Mistral)</h3>
+                    <p class="text-xs text-slate-400 mb-6">Rédaction & Synthèse ultra-rapide.</p>
+                    <a href="https://chat.mistral.ai/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
+                </div>
+            </div>
+
+            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
+                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=400" alt="Research" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-[#00AFD7]">Incontournable</span>
+                        <i data-lucide="book-open" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">NotebookLM</h3>
+                    <p class="text-xs text-slate-400 mb-6">Analysez vos propres cours et PDF.</p>
+                    <a href="https://notebooklm.google/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
+                </div>
+            </div>
+
+            <div class="glass-card bg-white rounded-2xl overflow-hidden flex flex-col">
+                <div class="img-placeholder flex items-center justify-center text-white/50 text-xs">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400" alt="Cyber" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-amber-500">Mixte</span>
+                        <i data-lucide="zap" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">ChatGPT-4o</h3>
+                    <p class="text-xs text-slate-400 mb-6">L'assistant polyvalent par excellence.</p>
+                    <a href="https://chatgpt.com/" target="_blank" class="block text-center py-2 px-4 rounded-xl border border-slate-100 text-sm font-bold hover:bg-[#00AFD7] hover:text-white transition-all">Ouvrir l'outil</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
