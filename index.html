@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Toolkit Académique 2026</title>
+    <title>IA Toolkit Académique 2026 - Complet</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -12,197 +12,265 @@
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: #f8fafc; 
-            color: #1e293b; 
+            color: #1e293b;
+            scroll-behavior: smooth;
         }
 
-        .sidebar-active {
+        .custom-blue-text { color: #00AFD7; }
+        .custom-blue-bg { background-color: #00AFD7; }
+
+        .sidebar-link:hover {
             background-color: #f0f9ff;
             color: #00AFD7;
-            border-right: 4px solid #00AFD7;
         }
 
         .card-shadow {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: 1px solid #e2e8f0;
         }
 
         .card-shadow:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -10px rgba(0, 175, 215, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 175, 215, 0.25);
             border-color: #00AFD7;
         }
 
         .img-header {
-            height: 140px;
+            height: 150px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+
+        .img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .badge {
+            font-size: 9px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .badge-free { background: #dcfce7; color: #166534; }
         .badge-mix { background: #fef9c3; color: #854d0e; }
         .badge-paid { background: #fee2e2; color: #991b1b; }
 
-        /* Animation d'apparition */
         .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: fadeIn 0.8s ease-out forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col md:flex-row">
 
-    <aside class="w-full md:w-72 bg-white border-r border-slate-200 p-8 space-y-10 z-10">
-        <div>
-            <h1 class="text-2xl font-800 tracking-tighter" style="color: #00AFD7;">IA TOOLKIT <span class="text-slate-300 font-light">2026</span></h1>
-            <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest font-bold">Réussite Universitaire</p>
+    <aside class="w-full md:w-80 bg-white border-r border-slate-200 p-8 flex flex-col h-screen sticky top-0">
+        <div class="mb-12">
+            <h1 class="text-2xl font-800 tracking-tighter custom-blue-text italic">IA TOOLKIT <span class="text-slate-300 font-light">2026</span></h1>
+            <div class="h-1 w-12 custom-blue-bg mt-2 rounded-full"></div>
         </div>
         
-        <nav class="space-y-1">
-            <p class="text-[10px] font-bold text-slate-400 mb-4 uppercase tracking-widest">Catégories</p>
-            <a href="#redaction" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
-                <i data-lucide="pen-tool" class="w-4 h-4 mr-3"></i> Texte & Rédaction
+        <nav class="flex-1 space-y-2">
+            <p class="text-[10px] font-bold text-slate-400 mb-6 uppercase tracking-widest">Navigation</p>
+            <a href="#redaction" class="sidebar-link flex items-center p-4 rounded-2xl text-sm font-semibold text-slate-600 transition-all">
+                <i data-lucide="pen-tool" class="w-5 h-5 mr-3"></i> Texte & Rédaction
             </a>
-            <a href="#recherche" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
-                <i data-lucide="search" class="w-4 h-4 mr-3"></i> Recherche & Sources
+            <a href="#recherche" class="sidebar-link flex items-center p-4 rounded-2xl text-sm font-semibold text-slate-600 transition-all">
+                <i data-lucide="search" class="w-5 h-5 mr-3"></i> Recherche & Sources
             </a>
-            <a href="#design" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
-                <i data-lucide="layout" class="w-4 h-4 mr-3"></i> Design & Diaporamas
+            <a href="#design" class="sidebar-link flex items-center p-4 rounded-2xl text-sm font-semibold text-slate-600 transition-all">
+                <i data-lucide="layout" class="w-5 h-5 mr-3"></i> Design & Diaporamas
             </a>
-            <a href="#audio" class="flex items-center p-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-all">
-                <i data-lucide="mic" class="w-4 h-4 mr-3"></i> Audio & Langues
+            <a href="#audio" class="sidebar-link flex items-center p-4 rounded-2xl text-sm font-semibold text-slate-600 transition-all">
+                <i data-lucide="mic" class="w-5 h-5 mr-3"></i> Audio & Langues
             </a>
         </nav>
 
-        <div class="pt-10 border-t border-slate-50">
-            <div class="bg-slate-50 p-4 rounded-2xl">
-                <p class="text-xs text-slate-500 leading-relaxed italic">"L'IA ne remplace pas l'étudiant, elle décuple ses capacités."</p>
+        <div class="bg-slate-900 rounded-3xl p-6 text-white relative overflow-hidden group">
+            <div class="relative z-10">
+                <p class="text-xs font-bold text-slate-400 mb-2">Statut</p>
+                <p class="text-sm font-semibold">Réussite Étudiante</p>
+                <div class="mt-4 flex items-center text-[10px] custom-blue-text font-bold">
+                    <span class="flex h-2 w-2 rounded-full custom-blue-bg mr-2 animate-pulse"></span>
+                    SYSTÈME OPTIMISÉ
+                </div>
             </div>
+            <i data-lucide="graduation-cap" class="absolute -bottom-2 -right-2 w-20 h-20 text-white/5 transform rotate-12"></i>
         </div>
     </aside>
 
-    <main class="flex-1 p-6 md:p-12 overflow-y-auto bg-slate-50/50">
+    <main class="flex-1 p-6 md:p-16">
         
-        <header class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div class="fade-in">
-                <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Tableau de bord</h2>
-                <p class="text-slate-500 mt-2">Explorez les outils les plus performants pour vos travaux académiques.</p>
+        <header class="mb-20 fade-in">
+            <div class="flex items-center gap-4 mb-4">
+                <span class="px-3 py-1 bg-slate-100 text-slate-500 rounded-lg text-[10px] font-bold tracking-widest uppercase">Université de Bretagne Sud</span>
             </div>
-            <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-3 pr-6">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold" style="background-color: #00AFD7;">UBS</div>
-                <div>
-                    <p class="text-xs font-bold text-slate-800 uppercase">Étudiant</p>
-                    <p class="text-[10px] text-slate-400">Session 2026</p>
-                </div>
-            </div>
+            <h2 class="text-5xl font-extrabold text-slate-900 leading-tight">L'IA au service de <br><span class="custom-blue-text">vos ambitions académiques.</span></h2>
         </header>
 
-        <section id="redaction" class="mb-20 fade-in">
-            <div class="flex items-center mb-8">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background-color: #00AFD720; color: #00AFD7;">
-                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
+        <section id="redaction" class="mb-24 fade-in">
+            <div class="flex items-center justify-between mb-10">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-xl custom-blue-bg text-white flex items-center justify-center mr-4 shadow-lg shadow-cyan-200">
+                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold">Texte & Rédaction</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800">Texte & Rédaction</h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden">
-                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1675557009875-436f2970a6a7?auto=format&fit=crop&q=80&w=400');"></div>
-                    <div class="p-6">
-                        <span class="badge-free text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter">Gratuit</span>
-                        <h4 class="font-bold text-xl mt-3">LeChat (Mistral)</h4>
-                        <p class="text-slate-500 text-sm mt-2 mb-6">L'IA européenne performante pour synthétiser vos notes.</p>
-                        <a href="https://chat.mistral.ai/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="card-shadow bg-white rounded-[2.5rem] overflow-hidden">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1675557009875-436f2970a6a7?auto=format&fit=crop&q=80&w=400');"><div class="img-overlay"></div></div>
+                    <div class="p-8 text-center">
+                        <span class="badge badge-free">Gratuit</span>
+                        <h4 class="text-xl font-bold mt-4">LeChat (Mistral)</h4>
+                        <p class="text-slate-500 text-xs mt-3 mb-8">Synthèse de cours et rédaction rapide.</p>
+                        <a href="https://chat.mistral.ai/" target="_blank" class="block py-4 px-6 rounded-2xl bg-slate-50 font-bold text-sm hover:custom-blue-bg hover:text-white transition-all italic">Accéder à l'outil</a>
                     </div>
                 </div>
-                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden border-2 border-[#00AFD730]">
-                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=400');"></div>
-                    <div class="p-6">
-                        <span class="badge-free text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter" style="background-color: #00AFD7; color: white;">Best for Students</span>
-                        <h4 class="font-bold text-xl mt-3">NotebookLM</h4>
-                        <p class="text-slate-500 text-sm mt-2 mb-6">Téléversez vos PDF et générez des résumés interactifs.</p>
-                        <a href="https://notebooklm.google/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
+                <div class="card-shadow bg-white rounded-[2.5rem] overflow-hidden scale-105 shadow-xl border-[#00AFD7]/20">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=400');"><div class="img-overlay"></div></div>
+                    <div class="p-8 text-center">
+                        <span class="badge custom-blue-bg text-white">Top Études</span>
+                        <h4 class="text-xl font-bold mt-4">NotebookLM</h4>
+                        <p class="text-slate-500 text-xs mt-3 mb-8">Interrogez vos documents de cours (PDF/Docs).</p>
+                        <a href="https://notebooklm.google/" target="_blank" class="block py-4 px-6 rounded-2xl custom-blue-bg text-white font-bold text-sm hover:opacity-90 transition-all italic shadow-lg shadow-cyan-200">Recommandé</a>
                     </div>
                 </div>
-                <div class="card-shadow bg-white rounded-[2rem] overflow-hidden">
-                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1673187670359-9946896503c8?auto=format&fit=crop&q=80&w=400');"></div>
-                    <div class="p-6">
-                        <span class="badge-mix text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-tighter">Mixte</span>
-                        <h4 class="font-bold text-xl mt-3">ChatGPT-4o</h4>
-                        <p class="text-slate-500 text-sm mt-2 mb-6">Le couteau suisse pour structurer vos plans de mémoires.</p>
-                        <a href="https://chatgpt.com/" target="_blank" class="block w-full text-center py-3 bg-slate-50 hover:bg-[#00AFD7] hover:text-white rounded-xl font-bold text-sm transition-all italic">Lancer l'outil</a>
+                <div class="card-shadow bg-white rounded-[2.5rem] overflow-hidden">
+                    <div class="img-header" style="background-image: url('https://images.unsplash.com/photo-1673187670359-9946896503c8?auto=format&fit=crop&q=80&w=400');"><div class="img-overlay"></div></div>
+                    <div class="p-8 text-center">
+                        <span class="badge badge-mix">Mixte</span>
+                        <h4 class="text-xl font-bold mt-4">ChatGPT-4o</h4>
+                        <p class="text-slate-500 text-xs mt-3 mb-8">La référence polyvalente pour tout type de texte.</p>
+                        <a href="https://chatgpt.com/" target="_blank" class="block py-4 px-6 rounded-2xl bg-slate-50 font-bold text-sm hover:custom-blue-bg hover:text-white transition-all italic">Accéder à l'outil</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="recherche" class="mb-20 fade-in">
-            <div class="flex items-center mb-8">
-                <div class="w-8 h-8 rounded-lg flex items-center justify-center mr-3" style="background-color: #00AFD720; color: #00AFD7;">
+        <section id="recherche" class="mb-24">
+            <div class="flex items-center mb-10">
+                <div class="w-10 h-10 rounded-xl custom-blue-bg text-white flex items-center justify-center mr-4">
                     <i data-lucide="search" class="w-5 h-5"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800">Recherche & Sources</h3>
+                <h3 class="text-3xl font-bold text-slate-800">Recherche & Sources</h3>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-shadow bg-white p-6 rounded-3xl">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="globe" class="w-5 h-5 text-slate-400"></i></div>
-                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://www.perplexity.ai/" target="_blank" class="card-shadow bg-white p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="mb-8">
+                        <span class="badge badge-free">Gratuit</span>
+                        <h4 class="text-lg font-bold mt-4 italic">Perplexity</h4>
                     </div>
-                    <h4 class="font-bold mb-1">Perplexity</h4>
-                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Le moteur de recherche qui cite ses sources.</p>
-                    <a href="https://www.perplexity.ai/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                    <div class="text-xs text-slate-400 font-bold flex items-center">SOURCES CITÉES <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i></div>
+                </a>
+                <a href="https://consensus.app/" target="_blank" class="card-shadow bg-white p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="mb-8">
+                        <span class="badge badge-mix">Mixte</span>
+                        <h4 class="text-lg font-bold mt-4 italic">Consensus</h4>
+                    </div>
+                    <div class="text-xs text-slate-400 font-bold flex items-center">SCIENCE-BASED <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i></div>
+                </a>
+                <a href="https://www.zotero.org/" target="_blank" class="card-shadow bg-white p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="mb-8">
+                        <span class="badge badge-free">Gratuit</span>
+                        <h4 class="text-lg font-bold mt-4 italic">Zotero</h4>
+                    </div>
+                    <div class="text-xs text-slate-400 font-bold flex items-center">BIBLIOGRAPHIE <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i></div>
+                </a>
+                <a href="https://www.deepl.com/" target="_blank" class="card-shadow bg-white p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="mb-8">
+                        <span class="badge badge-free">Gratuit</span>
+                        <h4 class="text-lg font-bold mt-4 italic">DeepL</h4>
+                    </div>
+                    <div class="text-xs text-slate-400 font-bold flex items-center">TRADUCTION PRO <i data-lucide="arrow-right" class="w-3 h-3 ml-2"></i></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="design" class="mb-24">
+            <div class="flex items-center mb-10">
+                <div class="w-10 h-10 rounded-xl custom-blue-bg text-white flex items-center justify-center mr-4">
+                    <i data-lucide="layout" class="w-5 h-5"></i>
                 </div>
-                <div class="card-shadow bg-white p-6 rounded-3xl">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="microscope" class="w-5 h-5 text-slate-400"></i></div>
-                        <span class="badge-mix text-[8px] font-bold px-2 py-0.5 rounded uppercase">Mixte</span>
+                <h3 class="text-3xl font-bold text-slate-800">Design & Diaporamas</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-shadow bg-white p-10 rounded-[2.5rem] flex items-center gap-8 border-l-8 border-[#00AFD7]">
+                    <div class="flex-1">
+                        <span class="badge badge-mix">Génération Auto</span>
+                        <h4 class="text-2xl font-bold mt-4 mb-2 italic">Gamma App</h4>
+                        <p class="text-sm text-slate-500 mb-6 italic">Générez une présentation structurée à partir d'un simple prompt.</p>
+                        <a href="https://gamma.app/" target="_blank" class="text-sm font-bold custom-blue-text flex items-center">Lancer Gamma <i data-lucide="external-link" class="w-4 h-4 ml-2"></i></a>
                     </div>
-                    <h4 class="font-bold mb-1">Consensus</h4>
-                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Trouvez des preuves scientifiques réelles.</p>
-                    <a href="https://consensus.app/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                    <i data-lucide="presentation" class="w-16 h-16 text-slate-100"></i>
                 </div>
-                <div class="card-shadow bg-white p-6 rounded-3xl">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="library" class="w-5 h-5 text-slate-400"></i></div>
-                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
+                <div class="card-shadow bg-white p-10 rounded-[2.5rem] flex items-center gap-8 border-l-8 border-[#00AFD7]">
+                    <div class="flex-1">
+                        <span class="badge badge-mix">Visuels IA</span>
+                        <h4 class="text-2xl font-bold mt-4 mb-2 italic">Canva Magic</h4>
+                        <p class="text-sm text-slate-500 mb-6 italic">Retouchez vos schémas et illustrez vos travaux sans effort.</p>
+                        <a href="https://www.canva.com/" target="_blank" class="text-sm font-bold custom-blue-text flex items-center">Lancer Canva <i data-lucide="external-link" class="w-4 h-4 ml-2"></i></a>
                     </div>
-                    <h4 class="font-bold mb-1">Zotero</h4>
-                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">Gestion bibliographique et IA.</p>
-                    <a href="https://www.zotero.org/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
-                </div>
-                <div class="card-shadow bg-white p-6 rounded-3xl">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="p-2 bg-slate-50 rounded-lg"><i data-lucide="languages" class="w-5 h-5 text-slate-400"></i></div>
-                        <span class="badge-free text-[8px] font-bold px-2 py-0.5 rounded uppercase">Gratuit</span>
-                    </div>
-                    <h4 class="font-bold mb-1">DeepL</h4>
-                    <p class="text-[11px] text-slate-400 mb-4 line-clamp-2">La référence pour traduire vos articles.</p>
-                    <a href="https://www.deepl.com/" target="_blank" class="text-xs font-bold" style="color: #00AFD7;">Visiter &rarr;</a>
+                    <i data-lucide="palette" class="w-16 h-16 text-slate-100"></i>
                 </div>
             </div>
         </section>
 
-        <footer class="mt-12 text-center text-slate-300 text-[10px] uppercase tracking-[0.2em] font-bold">
-            UBS Digital Learning • 2026 • IA Intelligence Collective
+        <section id="audio" class="mb-24">
+            <div class="flex items-center mb-10">
+                <div class="w-10 h-10 rounded-xl custom-blue-bg text-white flex items-center justify-center mr-4">
+                    <i data-lucide="mic" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-slate-800">Audio & Langues</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-shadow bg-white p-8 rounded-3xl text-center">
+                    <div class="w-12 h-12 rounded-full custom-blue-bg/10 custom-blue-text mx-auto flex items-center justify-center mb-6">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h4 class="font-bold text-lg italic">Whisper</h4>
+                    <p class="text-xs text-slate-400 mt-2">Transcription texte parfaite de vos cours enregistrés.</p>
+                    <a href="https://openai.com/research/whisper" target="_blank" class="mt-6 inline-block text-[10px] font-extrabold border-b-2 custom-blue-border">VOIR OPENAI</a>
+                </div>
+                <div class="card-shadow bg-white p-8 rounded-3xl text-center">
+                    <div class="w-12 h-12 rounded-full custom-blue-bg/10 custom-blue-text mx-auto flex items-center justify-center mb-6">
+                        <i data-lucide="languages"></i>
+                    </div>
+                    <h4 class="font-bold text-lg italic">DeepL Write</h4>
+                    <p class="text-xs text-slate-400 mt-2">Améliorez le style et la grammaire de vos essais.</p>
+                    <a href="https://www.deepl.com/write" target="_blank" class="mt-6 inline-block text-[10px] font-extrabold border-b-2 custom-blue-border">LIEN DIRECT</a>
+                </div>
+                <div class="card-shadow bg-white p-8 rounded-3xl text-center">
+                    <div class="w-12 h-12 rounded-full custom-blue-bg/10 custom-blue-text mx-auto flex items-center justify-center mb-6">
+                        <i data-lucide="radio"></i>
+                    </div>
+                    <h4 class="font-bold text-lg italic">ElevenLabs</h4>
+                    <p class="text-xs text-slate-400 mt-2">Transformez vos notes en podcasts audio pour réviser.</p>
+                    <a href="https://elevenlabs.io/" target="_blank" class="mt-6 inline-block text-[10px] font-extrabold border-b-2 custom-blue-border">TESTER L'IA</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-32 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-slate-300 text-[10px] font-bold tracking-widest uppercase">
+            <div>&copy; 2026 — UNIVERSITÉ DE BRETAGNE SUD</div>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <span>IA Éducation</span>
+                <span>Success Kit</span>
+            </div>
         </footer>
     </main>
 
     <script>
-        // Initialisation des icônes
         lucide.createIcons();
-        
-        // Petit script de défilement fluide
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
 </body>
 </html>
