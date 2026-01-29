@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Toolkit Académique 2026 - Complet & Responsive</title>
+    <title>IA Toolkit Académique 2026 - UBS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -24,9 +24,7 @@
             .sidebar {
                 width: 280px;
                 position: fixed;
-                top: 0;
-                left: 0;
-                height: 100vh;
+                top: 0; left: 0; height: 100vh;
                 background: #f8fafc;
                 border-right: 1px solid #e2e8f0;
                 padding: 2.5rem;
@@ -45,7 +43,7 @@
                 position: fixed;
                 top: 0; left: 0; right: 0;
                 height: 60px;
-                background: rgba(255, 255, 255, 0.9);
+                background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
                 border-bottom: 1px solid #e2e8f0;
                 display: flex;
@@ -65,7 +63,7 @@
             transition: all 0.3s;
         }
 
-        .nav-link:hover { background: #ffffff; color: #00AFD7; }
+        .nav-link:hover { background: #ffffff; color: #00AFD7; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
         .card-shadow {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -112,7 +110,7 @@
             <a href="#audio" class="nav-link"><i data-lucide="mic" class="w-4 h-4 mr-3"></i> Audio</a>
         </nav>
         <div class="mt-auto p-4 bg-slate-900 rounded-2xl text-white text-center text-[9px] font-bold tracking-widest uppercase">
-            Université de Bretagne Sud
+            Univ. Bretagne Sud
         </div>
     </aside>
 
@@ -130,14 +128,22 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <div class="card-shadow rounded-[2rem] overflow-hidden border-2 border-[#00AFD7]/30">
-                    <div class="h-32 flex items-center justify-center bg-slate-50">
-                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304efad2992b4444.svg" class="w-12 h-12" alt="Gemini">
+                    <div class="h-32 flex items-center justify-center bg-white">
+                        <svg viewBox="0 0 24 24" class="w-16 h-16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24Z" fill="#fff"/>
+                            <path d="M19.3 12.5c-.1 0-.1 0 0 0-3.3 0-6.1-2.2-7-5.2-.8 3-3.6 5.2-7 5.2 0 0-.1 0 0 0 3.3 0 6.1 2.2 7 5.2.8-3 3.6-5.2 7-5.2Z" fill="url(#gemini-grad)"/>
+                            <defs>
+                                <linearGradient id="gemini-grad" x1="5.25" y1="5.25" x2="18.75" y2="18.75" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#4285F4"/><stop offset="0.5" stop-color="#9B72CB"/><stop offset="1" stop-color="#D96570"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
                     </div>
                     <div class="p-8 text-center">
                         <span class="badge badge-fav inline-block mb-4 italic">Coup de cœur</span>
                         <h4 class="font-bold text-xl">Gemini</h4>
-                        <p class="text-slate-400 text-xs mt-2 mb-8">Rapidité et connexion web native.</p>
-                        <a href="https://gemini.google.com/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Lancer</a>
+                        <p class="text-slate-400 text-xs mt-2 mb-8">L'IA de Google, rapide et connectée au Web.</p>
+                        <a href="https://gemini.google.com/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Lancer Gemini</a>
                     </div>
                 </div>
                 <div class="card-shadow rounded-[2rem] overflow-hidden">
@@ -147,8 +153,8 @@
                     <div class="p-8 text-center">
                         <span class="badge badge-free inline-block mb-4">Gratuit</span>
                         <h4 class="font-bold text-xl">NotebookLM</h4>
-                        <p class="text-slate-400 text-xs mt-2 mb-8 italic">Le meilleur pour vos PDF de cours.</p>
-                        <a href="https://notebooklm.google/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir</a>
+                        <p class="text-slate-400 text-xs mt-2 mb-8 italic">Analysez vos propres cours et PDF.</p>
+                        <a href="https://notebooklm.google/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir l'outil</a>
                     </div>
                 </div>
                 <div class="card-shadow rounded-[2rem] overflow-hidden">
@@ -156,8 +162,8 @@
                     <div class="p-8 text-center">
                         <span class="badge badge-free inline-block mb-4">Français</span>
                         <h4 class="font-bold text-xl">LeChat</h4>
-                        <p class="text-slate-400 text-xs mt-2 mb-8 italic">Sobriété et précision rédactionnelle.</p>
-                        <a href="https://chat.mistral.ai/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir</a>
+                        <p class="text-slate-400 text-xs mt-2 mb-8 italic">Mistral AI : idéal pour le style rédactionnel.</p>
+                        <a href="https://chat.mistral.ai/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Ouvrir l'outil</a>
                     </div>
                 </div>
                 <div class="card-shadow rounded-[2rem] overflow-hidden">
@@ -166,7 +172,7 @@
                     </div>
                     <div class="p-8 text-center">
                         <span class="badge badge-mix inline-block mb-4">Mixte</span>
-                        <h4 class="font-bold text-xl">ChatGPT-4o</h4>
+                        <h4 class="font-bold text-xl">ChatGPT</h4>
                         <p class="text-slate-400 text-xs mt-2 mb-8 italic">Polyvalence et planification de tâches.</p>
                         <a href="https://chat.openai.com/" target="_blank" class="block py-4 rounded-2xl bg-slate-50 font-bold text-xs hover:custom-blue-bg hover:text-white transition-all italic">Lancer</a>
                     </div>
@@ -182,22 +188,22 @@
                 <a href="https://www.perplexity.ai/" target="_blank" class="card-shadow p-8 rounded-3xl group">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Perplexity</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Recherche sourcée</p>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Recherche web citée</p>
                 </a>
                 <a href="https://consensus.app/" target="_blank" class="card-shadow p-8 rounded-3xl group">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Consensus</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Science Only</p>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Moteur scientifique</p>
                 </a>
                 <a href="https://www.zotero.org/" target="_blank" class="card-shadow p-8 rounded-3xl group">
                     <span class="badge badge-free">Gratuit</span>
                     <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">Zotero</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Bibliographie</p>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Biblio & Citations</p>
                 </a>
                 <a href="https://www.deepl.com/" target="_blank" class="card-shadow p-8 rounded-3xl group">
                     <span class="badge badge-free">Gratuit</span>
                     <h4 class="font-bold text-2xl mt-4 italic group-hover:custom-blue-text transition-colors">DeepL</h4>
-                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest">Traduction Pro</p>
+                    <p class="text-[10px] text-slate-400 mt-2 uppercase font-bold tracking-widest leading-tight">Traducteur précis</p>
                 </a>
             </div>
         </section>
@@ -210,14 +216,14 @@
                 <div class="card-shadow p-10 rounded-[2.5rem] border-b-8 border-[#00AFD7]">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="text-2xl font-bold mt-4 italic">Gamma App</h4>
-                    <p class="text-slate-500 text-sm mt-2 mb-6 italic">Générez un diaporama structuré en 1 minute.</p>
-                    <a href="https://gamma.app/" target="_blank" class="text-xs font-black custom-blue-text underline uppercase">Accéder</a>
+                    <p class="text-slate-500 text-sm mt-2 mb-6 italic leading-relaxed">Créez des présentations complètes à partir d'un simple texte.</p>
+                    <a href="https://gamma.app/" target="_blank" class="text-xs font-black custom-blue-text underline uppercase tracking-widest">Lancer Gamma</a>
                 </div>
                 <div class="card-shadow p-10 rounded-[2.5rem] border-b-8 border-[#00AFD7]">
                     <span class="badge badge-mix">Mixte</span>
                     <h4 class="text-2xl font-bold mt-4 italic">Canva Magic</h4>
-                    <p class="text-slate-500 text-sm mt-2 mb-6 italic">Design assisté pour vos posters et schémas.</p>
-                    <a href="https://www.canva.com/" target="_blank" class="text-xs font-black custom-blue-text underline uppercase">Accéder</a>
+                    <p class="text-slate-500 text-sm mt-2 mb-6 italic leading-relaxed">Design facilité pour vos rapports et supports visuels.</p>
+                    <a href="https://www.canva.com/" target="_blank" class="text-xs font-black custom-blue-text underline uppercase tracking-widest">Lancer Canva</a>
                 </div>
             </div>
         </section>
@@ -227,21 +233,21 @@
                 <h3 class="text-2xl lg:text-3xl font-bold text-slate-800">Audio & Langues</h3>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center italic">
-                <div class="card-shadow p-8 rounded-[2rem]">
+                <a href="https://huggingface.co/spaces/openai/whisper" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold mt-4">Whisper</h4>
-                    <p class="text-[10px] text-slate-400 mt-1">Audio vers Texte</p>
-                </div>
-                <div class="card-shadow p-8 rounded-[2rem]">
+                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">Whisper</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Audio vers Texte (Cours)</p>
+                </a>
+                <a href="https://www.deepl.com/write" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
                     <span class="badge badge-free">Gratuit</span>
-                    <h4 class="font-bold mt-4">DeepL Write</h4>
-                    <p class="text-[10px] text-slate-400 mt-1">Correction Style</p>
-                </div>
-                <div class="card-shadow p-8 rounded-[2rem]">
+                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">DeepL Write</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Correction & Style</p>
+                </a>
+                <a href="https://elevenlabs.io/" target="_blank" class="card-shadow p-8 rounded-[2rem] block group">
                     <span class="badge badge-mix">Mixte</span>
-                    <h4 class="font-bold mt-4">ElevenLabs</h4>
-                    <p class="text-[10px] text-slate-400 mt-1">Synthèse Vocale</p>
-                </div>
+                    <h4 class="font-bold mt-4 group-hover:custom-blue-text transition-colors">ElevenLabs</h4>
+                    <p class="text-[10px] text-slate-400 mt-1 uppercase tracking-widest">Synthèse Vocale Pro</p>
+                </a>
             </div>
         </section>
 
